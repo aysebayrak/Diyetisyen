@@ -17,20 +17,23 @@ namespace WebAPI
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
+
         }
 
 
-        //kendi IOC YAPIMIZ ÝÇÝN AUTOFAC E GEÇTÝM oNU KULLANACAÐIMI PROGRAM CS YE bELÝRTTÝM
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-            .UseServiceProviderFactory(new AutofacServiceProviderFactory())
-              .ConfigureContainer<ContainerBuilder>(builder =>
-              {
-                  builder.RegisterModule(new AutofacBusinessModule());
-              })
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+            //kendi IOC YAPIMIZ ÝÇÝN AUTOFAC E GEÇTÝM oNU KULLANACAÐIMI PROGRAM CS YE bELÝRTTÝM
+            public static IHostBuilder CreateHostBuilder(string[] args) =>
+                Host.CreateDefaultBuilder(args)
+                .UseServiceProviderFactory(new AutofacServiceProviderFactory())
+                  .ConfigureContainer<ContainerBuilder>(builder =>
+                  {
+                      builder.RegisterModule(new AutofacBusinessModule());
+                  })
+                    .ConfigureWebHostDefaults(webBuilder =>
+                    {
+                        webBuilder.UseStartup<Startup>();
+                    });
+        }
+
     }
-}
+

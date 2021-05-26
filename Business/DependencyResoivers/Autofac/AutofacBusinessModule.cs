@@ -34,7 +34,7 @@ namespace Business.DependencyResoivers.Autofac
             builder.RegisterType<EfDietDal>().As<IDietDal>().SingleInstance();
 
 
-            builder.RegisterType<DiseaseManager>().As<IDietService>().SingleInstance();
+            builder.RegisterType<DiseaseManager>().As<IDiseaseService>().SingleInstance();
             builder.RegisterType<EfDiseaseDal>().As<IDiseaseDal>().SingleInstance();
 
 
