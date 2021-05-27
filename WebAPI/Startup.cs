@@ -39,6 +39,9 @@ namespace WebAPI
             });
 
 
+
+            services.AddCors(); //frontentd ile baðlantý
+
             //Sisteem ben jwt ile çalýþacaðým dedim 
            
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
@@ -69,6 +72,8 @@ namespace WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1"));
             }
+
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());//bu sayfadan gelen her isteðe izinn ver demek
 
             app.UseHttpsRedirection();
 
