@@ -14,7 +14,7 @@ namespace Business.Abstract
         IResult Add(Diet diet);
         IResult Update(Diet diet);
         IResult Delete(Diet diet);
-      //  IDataResult<Diet> GetById(int dietId);
+        IDataResult<Diet> GetByDietId(int dietId);
 
     }
 }

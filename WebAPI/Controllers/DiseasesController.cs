@@ -45,5 +45,27 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+
+        [HttpPost("update")]
+        public IActionResult Update(Disease disease)
+        {
+            var result = _diseaseService.Update(disease);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("delete")]
+        public IActionResult Delete(Disease disease)
+        {
+            var result = _diseaseService.Delete(disease);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

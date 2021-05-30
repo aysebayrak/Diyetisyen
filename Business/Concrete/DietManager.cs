@@ -37,6 +37,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Diet>>(_dietDal.GetAll());
         }
 
+        public IDataResult<Diet> GetByDietId(int dietId)
+        {
+            throw new NotImplementedException();
+        }
+
         public IResult Update(Diet diet)
         {
             _dietDal.UpDate(diet);
