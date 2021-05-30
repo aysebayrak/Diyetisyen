@@ -37,7 +37,9 @@ namespace Business.Concrete
         }
 
         public IResult Update(Disease disease)
-        {
+        
+        
+      {
             _diseaseDal.UpDate(disease);
             return new SuccessResult(Messages.DiseaseUpdated);
         }
