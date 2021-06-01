@@ -9,9 +9,13 @@ namespace Entities.Concrete
 {
    public class Doctor :IEntity 
     {
-        public int  DoctorId { get; set; }
-        public  int  UserId { get; set; }
+        public int  DoktorId { get; set; }
+         public  int  UserId { get; set; }
         public string Salary { get; set; } //maaş
 
-    }
+
+
+
+
+   }
 }
