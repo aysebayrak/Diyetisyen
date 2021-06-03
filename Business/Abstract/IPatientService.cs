@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,8 @@ namespace Business.Abstract
         IResult Add(Patient patient);
         IResult Update(Patient patient);
         IResult Delete(Patient patient);
+
+        IDataResult<List<PatientDetailDto>> GetPatientDetails();
+        IDataResult<List<PatientDetailDto>> GetPatientDetail(int patientId);
     }
 }

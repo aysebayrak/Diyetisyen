@@ -5,6 +5,7 @@ using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace Business.Concrete
             _patientDal = patientDal;
             _dietService = dietService;
         }
-        [SecuredOperation("patient.add")]
+      //  [SecuredOperation("patient.add")]
         public IResult Add(Patient patient)
         {
             IResult result = BusinessRules.Run(CheckIfDietCountOfPatientCorrect(patient.DietId));
@@ -44,6 +45,16 @@ namespace Business.Concrete
         public IDataResult<List<Patient>> GetAll()
         {
             return new SuccessDataResult<List<Patient>>(_patientDal.GetAll(), Messages.PatientsListed);
+        }
+
+        public IDataResult<List<PatientDetailDto>> GetPatientDetail(int patientId)
+        {
+            return new SuccessDataResult<List<PatientDetailDto>>(_patientDal.GetPatientDetails(patientDetail => patientDetail.PatientId == patientId));
+        }
+
+        public IDataResult<List<PatientDetailDto>> GetPatientDetails()
+        {
+            return new SuccessDataResult<List<PatientDetailDto>>(_patientDal.GetPatientDetails(), "");
         }
 
         public IResult Update(Patient patient)

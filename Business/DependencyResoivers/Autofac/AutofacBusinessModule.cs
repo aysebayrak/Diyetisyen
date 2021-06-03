@@ -42,6 +42,10 @@ namespace Business.DependencyResoivers.Autofac
             builder.RegisterType<EfPatientDal>().As<IPatientDal>().SingleInstance();
 
 
+            builder.RegisterType<DoctorManager>().As<IDoctorService>().SingleInstance();
+            builder.RegisterType<EfDoctorDal>().As<IDoctorDal>().SingleInstance();
+
+
             //kayıt ettiğm sınıflar için  ınterseptr  ozelliği sağlıyor .
             //çalışan uygulam içereisidende  implemente edilmiş interfaces leri buluyor ve onlarıa  onlar için olusturdugum aspect yapısının çağrıyor 
 
