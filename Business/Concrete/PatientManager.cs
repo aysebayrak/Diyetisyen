@@ -47,6 +47,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Patient>>(_patientDal.GetAll(), Messages.PatientsListed);
         }
 
+        public IDataResult<Patient> GetPatientById(int id)
+        {
+            return new SuccessDataResult<Patient>(_patientDal.Get(p => p.PatientId == id));
+        }
+
         public IDataResult<List<PatientDetailDto>> GetPatientDetail(int patientId)
         {
             return new SuccessDataResult<List<PatientDetailDto>>(_patientDal.GetPatientDetails(patientDetail => patientDetail.PatientId == patientId));

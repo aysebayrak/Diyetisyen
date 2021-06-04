@@ -15,7 +15,7 @@ namespace Business.Abstract
         IResult Add(Patient patient);
         IResult Update(Patient patient);
         IResult Delete(Patient patient);
-
+        IDataResult<Patient> GetPatientById(int id);
         IDataResult<List<PatientDetailDto>> GetPatientDetails();
         IDataResult<List<PatientDetailDto>> GetPatientDetail(int patientId);
     }
