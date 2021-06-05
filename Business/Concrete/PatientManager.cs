@@ -23,7 +23,7 @@ namespace Business.Concrete
             _patientDal = patientDal;
             _dietService = dietService;
         }
-      //  [SecuredOperation("patient.add")]
+        [SecuredOperation("admin,patient.add")]
         public IResult Add(Patient patient)
         {
             IResult result = BusinessRules.Run(CheckIfDietCountOfPatientCorrect(patient.DietId));

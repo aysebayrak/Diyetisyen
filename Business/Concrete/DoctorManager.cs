@@ -20,12 +20,13 @@ namespace Business.Concrete
             _doctorDal = doctorDal;
 
         }
-       //  [SecuredOperation("admin")]
+      // [SecuredOperation("admin,patient.add")]
         public IResult Add(Doctor doctor)
         {
             _doctorDal.Add(doctor);
             return new SuccessResult(Messages.DoctorAdd);
         }
+
 
         public IResult Delete(Doctor doctor)
         {

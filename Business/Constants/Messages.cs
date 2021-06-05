@@ -52,7 +52,7 @@ namespace Business.Constants
 
         public static string UserAlreadyExists = "Kullanıcı Mevcut";
 
-        public static string AccessTokenCreated = "Token Oluşturuldu";
+        public static string AccessTokenCreated = "Giriş Başarılı ";
 
         public static string USerDeleted { get; internal set; }
         public static string UserUpdated { get; internal set; }
