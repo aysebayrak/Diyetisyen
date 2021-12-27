@@ -14,5 +14,6 @@ namespace Business.Abstract
         IResult Add(Doctor doctor);
         IResult Update(Doctor doctor);
         IResult Delete(Doctor doctor);
+
     }
 }

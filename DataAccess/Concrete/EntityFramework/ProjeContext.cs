@@ -15,7 +15,7 @@ namespace DataAccess.Concrete.EntityFramework
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=YazilimmMimarisi;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=YazilimmmMimari;Trusted_Connection=true");
 
 
         }
@@ -32,4 +32,5 @@ namespace DataAccess.Concrete.EntityFramework
         
 
     }
+    
 }

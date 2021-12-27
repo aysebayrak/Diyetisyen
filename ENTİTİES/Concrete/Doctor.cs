@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-   public class Doctor :  IEntity 
+   public class Doctor : IEntity     //  User   
     {
         public int  DoctorId { get; set; }
-        //   public  int  UserId { get; set; }
+         // public  int  UserId { get; set; }
         public string FirstName { get; set; }
 
         public string Tc { get; set; }

@@ -23,14 +23,14 @@ namespace Business.Concrete
             _patientDal = patientDal;
             _dietService = dietService;
         }
-        [SecuredOperation("admin,patient.add")]
-        public IResult Add(Patient patient)
-        {
-            IResult result = BusinessRules.Run(CheckIfDietCountOfPatientCorrect(patient.DietId));
-            if (result != null)
-            {
-                return result;
-            }
+       // [SecuredOperation("admin,patient.add")]
+        public IResult Add(Patient patient) { 
+        //{
+        //    IResult result = BusinessRules.Run(CheckIfDietCountOfPatientCorrect(patient.DietId));
+        //    if (result != null)
+        //    {
+        //        return result;
+        //    }
             _patientDal.Add(patient);
             return new SuccessResult(Messages.PatientAdded);
         }
@@ -65,7 +65,7 @@ namespace Business.Concrete
         public IResult Update(Patient patient)
         {
             var result = _patientDal.GetAll(p => p.DietId == patient.DietId).Count;
-            if (result >= 1)
+            if (result >=1)
             {
                 return new ErrorResult(Messages.PatientCountOfDietError);
             }
@@ -79,7 +79,7 @@ namespace Business.Concrete
 
 
             var result = _patientDal.GetAll(p => p.DietId == dietId).Count;
-            if (result >= 1)
+            if (result >=1)
             {
                 return new ErrorResult(Messages.PatientCountOfDietError);
             }
