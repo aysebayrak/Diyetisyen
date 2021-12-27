@@ -1,7 +1,7 @@
-# YazilimMimarisi
+# Diyetim
 
 Kurumsal, Katmanlı Mimari yapısı kullanılarak *SOLID* kuralları dahilinde oluşturulmuş, *C#* dili ile yazılmıştır.<br/>
-Araba kiralama fikri üzerine oluşmuştur .
+Diyetisen - Hasta  fikri üzerine oluşmuştur .
 ## Katmanlar
 - **Core** : Projenin çekirdek katmanı olup içerisinde evrensel operasyonlar  yazılmıştır.
 - **DataAccess** : Projede veritabanımız ile bağlantımızı kurduğumuz katmanımızdır.
